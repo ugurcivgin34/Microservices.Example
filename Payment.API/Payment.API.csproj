@@ -7,19 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\**" />
-    <Content Remove="Controllers\**" />
-    <EmbeddedResource Remove="Controllers\**" />
-    <None Remove="Controllers\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.3" />
-    <PackageReference Include="MongoDB.Driver" Version="2.24.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Order.API\Order.API.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 

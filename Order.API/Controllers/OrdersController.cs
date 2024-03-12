@@ -36,6 +36,7 @@ namespace Order.API.Controllers
                 Price = x.Price,
                 ProductId = x.ProductId
             }).ToList();
+            
 
             order.TotalPrice = order.OrderItems.Sum(x => x.Price * x.Count);
 
@@ -50,7 +51,8 @@ namespace Order.API.Controllers
                 {
                     Count = oi.Count,
                     ProductId = oi.ProductId,
-                }).ToList()
+                }).ToList(),
+                TotalPrice=order.TotalPrice
             };
 
             await _publishEndpoint.Publish(orderCreatedEvent);
